@@ -19,7 +19,7 @@ let allCities = async (req, res) => {
 let Citiesbyname = async (req,res,next) =>{
     try {
         let cityQuery = req.params.city
-        let city = await Cities.findOne({city: cityQuery} );
+        let city = await Cities.find({city: cityQuery} );
         if (city){
             return res.status(200).json({
                 response: city
@@ -39,7 +39,7 @@ let Citiesbyname = async (req,res,next) =>{
 let Citiesbycountry = async (req , res, next) =>{
     try {
         let countryQuery = req.params.country
-        let city = await Cities.findOne({country: countryQuery});
+        let city = await Cities.find({country: countryQuery});
         if (city){
             return res.status(200).json({
                 response: city

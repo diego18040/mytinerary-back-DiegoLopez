@@ -61,8 +61,12 @@ npm i cors
 
 npm i morgan
 
-npm install concurrently --save-dev
+npm install concurrently --save-dev 
 
+Create .env  and copy to 
+
+PORT =8080
+URI_MONGO = "mongodb+srv://DiegoLopezZ:Chiquis1@bsddiego.yvcjp.mongodb.net/prueba1"
 
 How you use?
 
@@ -70,6 +74,6 @@ How you use?
 2- Second you have to (npm run dev)
 3- third use of api in postman
 
-localhost:8080/api/products/all
+localhost:8080/api/citie/all
 localhost:8080          /api           /products           /all
 (Adjust depend your cp) (api)     (Changess to models) (condiction)
