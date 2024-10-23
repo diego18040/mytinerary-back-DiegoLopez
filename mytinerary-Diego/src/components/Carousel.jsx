@@ -1,12 +1,14 @@
+import React from "react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "../index.css";
 
-const Carousel = ({ cities }) => {
+const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
   // Verifica que 'cities' tenga datos antes de intentar usar sort
-  if (!cities || cities.length === 0) {
+  if (!data || data.length === 0) {
     return <div>Loading...</div>; // Puedes mostrar un mensaje de carga si no hay datos
   }
 
