@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
+import SearchCard from "../components/SearchCard"; // Importa el nuevo componente
 
 const Cities = () => {
   const [cities, setCities] = useState([]); // Asegurarse de inicializar como array
@@ -25,7 +26,6 @@ const Cities = () => {
       }
     };
     
-
     fetchCities();
   }, []);
 
@@ -45,13 +45,8 @@ const Cities = () => {
     <>
       <Header />
       <main className="py-8 text-center">
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Search By City"
-            onChange={handleSearch}
-            className="border rounded p-2 w-full md:w-1/2 mx-auto"
-          />
+        <div className="mt-20 ">
+        <SearchCard handleSearch={handleSearch}/>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {Array.isArray(filteredCities) && filteredCities.length === 0 ? (
@@ -63,12 +58,15 @@ const Cities = () => {
             filteredCities.map((city) => <Card key={city._id} data={city} />)
           )}
         </div>
+        <div className="mt-4">
         <NavLink
           className="bg-blue-500 text-white px-6 py-3 rounded-full mt-4 hover:bg-blue-600 hover:shadow-md transition duration-300 ease-in-out bg-center w-full md:w-auto"
           to="/"
         >
           Go Back to Main
         </NavLink>
+
+        </div>
       </main>
       <Footer />
     </>

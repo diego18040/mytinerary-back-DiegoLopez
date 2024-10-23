@@ -16,10 +16,10 @@ const CitiesList = () => {
           });
           const data = await response.json();
           setCities(data.response);
-          setFilteredCities(data.response);
           setLoading(false);
         } catch (error) {
           console.error("Error fetching cities:", error);
+          setError(error); // Manejar el error
           setLoading(false);
         }
       };
@@ -32,13 +32,13 @@ const CitiesList = () => {
 
   return (
     <div>
-      {/* Pasamos las ciudades al carrusel */}
-      <Carousel cities={cities} />
+      {/* Pasamos las ciudades al carrusel (notar el nombre de la prop 'data') */}
+        <Carousel data={cities} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {/* Renderizamos las tarjetas de cada ciudad */}
         {cities.map((city) => (
-          <Card key={city._id} data={city} />
+            <Card key={city._id} data={city} />
         ))}
       </div>
     </div>
@@ -46,5 +46,3 @@ const CitiesList = () => {
 };
 
 export default CitiesList;
-
-
