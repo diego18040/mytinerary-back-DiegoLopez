@@ -10,7 +10,6 @@ const cities = [
       foundation: "1536-02-02",
       population: 2891000,
       photo: "https://c4.wallpaperflare.com/wallpaper/856/590/514/night-lights-road-tower-wallpaper-preview.jpg",
-      
   },
   {
       city: "São Paulo",

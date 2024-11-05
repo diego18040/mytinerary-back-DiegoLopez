@@ -1,21 +1,21 @@
+import Itineraries from '../models/Itineraries.js';
 
 const conflictMiddleware = async (req, res, next) => {
     try {
-        const { id } = req.body;
-        
-        // Verifica si ya existe un empleado con el mismo `id`
-        const existingEmployee = await Employee.find({ id });
+        const { admin_id } = req.body;
 
-        if (existingEmployee) {
+        const existingItinerary = await Itineraries.findOne({ admin_id });
+
+        if (existingItinerary) {
             return res.status(409).json({
-                message: `Conflict: Employee with id ${id} already exists.`
+                message: `Conflict: Itinerary with admin_id ${admin_id} already exists.`
             });
         }
 
         // Si no hay conflicto, continúa con la siguiente función
         next();
     } catch (error) {
-        next(error);
+        next(error); // Pasa el error al manejador de errores
     }
 };
 

@@ -1,17 +1,18 @@
 import { Schema, model } from "mongoose";
 
-let collection ='cities'
+let collection = 'cities';
 let schema = new Schema({
-    city:{type:String,required:true},
-    country:{type:String,required:true},
-    description:{type:String,required:true},
-    foundation:{type:String,required:true},
-    population:{type:Number,required:true},
-    photo:{type:String,required:true}
-},{
+    city: { type: String, required: true },
+    country: { type: String, required: true },
+    description: { type: String, required: true },
+    foundation: { type: String, required: true },
+    population: { type: Number, required: true },
+    photo: { type: String, required: true },
+    itineraries: [{ type: Schema.Types.ObjectId, ref: 'Itinerary', required: false }] // Array de ObjectId
+}, {
     timestamps: true
-})
+});
 
-let Store = model(collection,schema)
+let City = model(collection, schema);
 
-export default Store
+export default City;
