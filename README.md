@@ -30,7 +30,7 @@ copy and paste in .env see bellow ->
 How you use?
 
 1- First you have to upload the data to morgan (npm run dataStores)
-2- position to cd mytinerary-Diego
+2- position to cd MYTINERARY-BACK-DIEGOLOPEZ
 3- Second you have to (npm run dev)
 4- third use of api in postman
 
