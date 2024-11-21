@@ -9,7 +9,8 @@
     "dev": "nodemon ./server.js",
     "dataCities": "node ./models/data/cities.js",
     "dataItenary": "node ./models/data/itineraries.js",
-    "dataUsers": "node ./models/data/users.js"
+    "dataUsers": "node ./models/data/users.js",
+    "dataCountries": "node ./models/data/countries.js"
   },
   "keywords": [],
   "author": "",
