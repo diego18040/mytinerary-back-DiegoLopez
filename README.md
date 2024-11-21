@@ -19,6 +19,22 @@ npm i morgan
 
 npm install concurrently --save-dev 
 
+npm install joi
+
+npm install joi-oid
+
+npm install jsonwebtoken
+
+npm install passport passport-jwt
+
+npm install jsonwebtoken passport passport-jwt
+
+npm install bcrypt
+
+npm install bcryptjs
+
+npm i passport-google-oauth
+
 Create .env and copypages to \mytinerary-back-DiegoLopez\mytinerary-Diego
 
 copy and paste in .env see bellow ->
