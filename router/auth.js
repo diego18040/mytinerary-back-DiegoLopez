@@ -4,6 +4,7 @@ import accountNoExist from "../middlewares/accountNoExist.js";
 import isValidadPassword from "../middlewares/isValidadPassword.js";
 import generateToken from "../middlewares/generateToken.js";
 import signout from "../controllers/auth/signout.js";
+import signInGoogle from "../controllers/auth/signInGoogle.js";
 import passport from "../middlewares/passport.js";
 import passportGoogle from "../middlewares/passportGoogle.js";
 import jwt from 'jsonwebtoken'
@@ -22,7 +23,7 @@ routerAuth.get(
     '/signin/google/callback',
     passportGoogle.authenticate('google', { session: false, failureRedirect: '/login' }),
     generateToken,
-    signIn
+    signInGoogle
 )
 
 

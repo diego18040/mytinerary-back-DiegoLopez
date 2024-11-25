@@ -15,7 +15,7 @@ routerUser.get('/all',passport.authenticate('jwt',{session:false}), allUser)
 routerUser.get('/name/:name',passport.authenticate('jwt',{session:false}),Userbyname)
 routerUser.post('/register',validator(SchemaUsersCreate),accountExists,createHash,register);
 /*routerUser.post('/registerMany',passport.authenticate('jwt',{session:false}),validator(schema_users_create),createHash,registerMany); // todo en una sola operacion*/
-routerUser.put('/update',passport.authenticate('jwt',{session:false}),update)
+routerUser.put('/update',passport.authenticate('jwt',{session:false}),createHash,update)
 routerUser.delete('/deleteOne',passport.authenticate('jwt',{session:false}),deleteOne)
 
 

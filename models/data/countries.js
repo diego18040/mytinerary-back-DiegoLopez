@@ -13,6 +13,7 @@ const countries = [
     {country:"Peru"},
     {country:"Brazil"},
     {country:"Ecuador"},
-    {country: "Venezuela"}
+    {country: "Venezuela"},
+    {country: "Other"}
 ];
 Countries.insertMany(countries)
